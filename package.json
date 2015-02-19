@@ -7,5 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Varya Stepanova",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-express": "0.1.7"
+  },
+  "dependencies": {
+    "connect-livereload": "^0.5.3",
+    "express": "^4.11.2"
+  }
 }
