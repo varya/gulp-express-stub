@@ -1,0 +1,11 @@
+{
+  "name": "y",
+  "version": "0.0.0",
+  "description": "Project stub for live-reloaded express server'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Varya Stepanova",
+  "license": "ISC"
+}
