@@ -22,9 +22,9 @@ gulp.task('build:html', function() {
 });
  
 gulp.task('serve', ['build:app'], function() {
-    server.run({
-        file: appPath
-    });
+    server.run([
+        appPath
+    ]);
  
     gulp.watch(sourcePath + '**/*.html', ['build:html']);
  
