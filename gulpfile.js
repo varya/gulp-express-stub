@@ -1,5 +1,11 @@
+"use strict";
+
+(function() {
+
 var gulp = require("gulp");
 var server = require("gulp-express");
+var replace = require("gulp-replace");
+var util = require("gulp-util");
 
 var options = require("./config");
 
@@ -7,6 +13,9 @@ var options = require("./config");
 var sourcePath = options.sourcePath;
 var outputPath = options.outputPath;
 var appPath = options.appPath;
+var livereloadPort = options.livereloadPort;
+
+var environment = util.env.env || 'development';
 
 gulp.task("build:app", [
     "build:html",
@@ -27,8 +36,14 @@ gulp.task("build:js", function() {
 });
 
 gulp.task("build:html", function() {
+
+    var livereloadScript = {
+        "production": "",
+        "development": "<script src='http://localhost:" + livereloadPort + "/livereload.js'></script>"
+    }
     // Copy HTML
     return gulp.src(sourcePath + "/**/*.html")
+        .pipe(replace("<!-- livereload -->", livereloadScript[environment]))
         .pipe(gulp.dest(outputPath));
 
 });
@@ -47,3 +62,5 @@ gulp.task("serve", ["build:app"], function() {
 });
 
 gulp.task("default", ["serve"]);
+
+})();

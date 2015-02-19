@@ -10,7 +10,9 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.8.11",
-    "gulp-express": "0.1.10"
+    "gulp-express": "0.1.10",
+    "gulp-replace": "^0.5.3",
+    "gulp-util": "^3.0.3"
   },
   "dependencies": {
     "connect-livereload": "^0.5.3",
