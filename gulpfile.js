@@ -51,7 +51,11 @@ gulp.task("build:html", function() {
 gulp.task("serve", ["build:app"], function() {
     server.run([
         appPath
-    ]);
+    ], {
+      env: {
+          env: environment
+      }
+    });
 
     gulp.watch(sourcePath + "/**/*.html", ["build:html"]);
     gulp.watch(sourcePath + "/**/*.css", ["build:css"]);
